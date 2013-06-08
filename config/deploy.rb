@@ -1,8 +1,8 @@
 require "bundler/capistrano"
-require 'fast_git_deploy/enable'
+require 'fast_git_deploy'
 
 set :application, "kayak"
-set :repository,  "https://github.com/jsierles/kayak.git"
+set :repository,  "https://github.com/felixbuenemann/kayak.git"
 set :deploy_to, "/u/apps/#{application}"
 set :scm, :git
 
