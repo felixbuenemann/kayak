@@ -9,7 +9,7 @@ group :assets do
 end
 
 group :development do
-  gem 'fast_git_deploy', git: "https://github.com/smtlaissezfaire/fast_git_deploy.git"
+  gem 'fast_git_deploy', '0.2.1'
 end
 
 gem 'unicorn'
