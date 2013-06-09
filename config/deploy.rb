@@ -24,7 +24,7 @@ role :db,  "kayak.test", :primary => true
 namespace :deploy do
   desc "Start unicorn for this application"
   task :start do
-    run "cd #{current_path} && bundle exec unicorn -c /etc/unicorn/kayak.conf.rb -D"
+    run "unicorn -c /etc/unicorn/#{application}.conf.rb -D"
   end
   desc "Stop unicorn for this application"
   task :stop do
@@ -32,6 +32,6 @@ namespace :deploy do
   end
   desc "Restart unicorn for this application"
   task :restart do
-    run "(test -f #{unicorn_pid} && kill -HUP `cat #{unicorn_pid}`) || (cd #{current_path} && bundle exec unicorn -c /etc/unicorn/kayak.conf.rb -D)"
+    run "(test -f #{unicorn_pid} && kill -HUP `cat #{unicorn_pid}`) || unicorn -c /etc/unicorn/#{application}.conf.rb -D"
   end
 end

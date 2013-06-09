@@ -12,5 +12,4 @@ group :development do
   gem 'fast_git_deploy', '0.2.1'
 end
 
-gem 'unicorn'
 gem 'capistrano'
